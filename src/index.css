@@ -1,6 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Quicksand&display=swap");
+
 /* Tailwind directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Quicksand&display=swap");
