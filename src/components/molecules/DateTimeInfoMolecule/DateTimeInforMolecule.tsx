@@ -7,7 +7,11 @@ const DateTimeInforMolecule: React.FC = () => {
       <MyText text="21-july-2023" />
       <MyText text="Friday, 12:44 PM" />
       <MyText text="Day" />
-      <MyText text="Dhaka" className="mt-5" />
+      <MyText
+        text="Dhaka"
+        className="font-bold mt-5"
+        style={{ fontSize: "30px" }}
+      />
     </div>
   );
 };
