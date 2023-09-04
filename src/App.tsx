@@ -3,6 +3,8 @@ import "./index.css";
 import SearchBar from "./components/molecules/SearchBar/SearchBar";
 import WeatherSummaryWithIcon from "./components/molecules/WeatherSummaryWithIcon/WeatherSummaryWithIcon";
 import DateTimeInforMolecule from "./components/molecules/DateTimeInfoMolecule/DateTimeInforMolecule";
+import TabNames from "./components/molecules/TabNames/TabNames";
+import WeatherTabToday from "./components/molecules/WeatherTabToday/WeatherTabToday";
 
 const App: React.FC = () => {
   return (
@@ -23,10 +25,11 @@ const App: React.FC = () => {
         <DateTimeInforMolecule />
       </div>
       <div
-        className="lg:w-3/5 md:w-1/2 sm:w-ful bg-green-300 rounded-md"
-        style={{ width: "800px", height: "800px" }}
+        className="lg:w-3/5 md:w-1/2 sm:w-ful rounded-md"
+        style={{ width: "800px", height: "800px", backgroundColor: "#efefef" }}
       >
-        <p>Right Div</p>
+        <TabNames />
+        <WeatherTabToday />
       </div>
     </div>
   );
