@@ -6,12 +6,16 @@ import SearchIcon from "../../../assets/search-icon.png";
 const SearchBar: React.FC = () => {
   const [value, setValue] = useState("");
   return (
-    <div className="flex justify-center items-center w-80 bg-white rounded-3xl py-2 px-3 mx-auto">
+    <div
+      className="flex justify-center items-center w-80 rounded-3xl py-2 px-3 mx-auto"
+      style={{ backgroundColor: "#ededef" }}
+    >
       <Input
         value={value}
         setValue={setValue}
         className="w-80 outline-none border-none"
         placeholder="Enter a place name"
+        style={{ backgroundColor: "#ededef" }}
       />
       <MyImage
         src={SearchIcon}
