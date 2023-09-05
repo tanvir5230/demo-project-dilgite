@@ -1,5 +1,5 @@
-import HomepageLeft from "../../organisms/HomepageLeft/HomepageLeft";
-import HomepageRight from "../../organisms/HomepageRight/HomepageRight";
+import WeatherSummaryWithLocationInfo from "../../organisms/HomepageLeft/HomepageLeft";
+import WeatherDetailsDiv from "../../organisms/HomepageRight/HomepageRight";
 
 const HomepageTemplate = () => {
   return (
@@ -11,8 +11,8 @@ const HomepageTemplate = () => {
         fontFamily: "'Quicksand', 'sans-serif'",
       }}
     >
-      <HomepageLeft />
-      <HomepageRight />
+      <WeatherSummaryWithLocationInfo />
+      <WeatherDetailsDiv />
     </div>
   );
 };
