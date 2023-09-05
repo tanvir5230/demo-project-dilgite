@@ -7,7 +7,7 @@ interface WeatherInfo {
   secondValue: string;
 }
 
-const WeatherInfoDivType1: React.FC<{ data: WeatherInfo }> = ({ data }) => {
+const WeatherInfoCard: React.FC<{ data: WeatherInfo }> = ({ data }) => {
   return (
     <div
       className="text-start pl-4 rounded-3xl flex flex-col justify-around py-3"
@@ -24,4 +24,4 @@ const WeatherInfoDivType1: React.FC<{ data: WeatherInfo }> = ({ data }) => {
   );
 };
 
-export default WeatherInfoDivType1;
+export default WeatherInfoCard;

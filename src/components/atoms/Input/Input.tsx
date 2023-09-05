@@ -2,7 +2,7 @@ import React from "react";
 
 interface InputInterface {
   value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  setValue: (newLocationName: string) => void;
   placeholder?: string;
   id?: "";
   name?: "";

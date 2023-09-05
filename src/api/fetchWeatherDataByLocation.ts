@@ -1,5 +1,7 @@
-async function getWeatherDataByLocationName(locationName: string) {
-  const apiKey = "";
+async function fetchWeatherDataByLocationName(
+  locationName: string,
+): Promise<void> {
+  const apiKey = "961dc6468f1545c7b6f41350230509";
   const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${locationName}`;
   try {
     const response = await fetch(apiUrl);
@@ -14,4 +16,4 @@ async function getWeatherDataByLocationName(locationName: string) {
   }
 }
 
-export { getWeatherDataByLocationName };
+export { fetchWeatherDataByLocationName };
