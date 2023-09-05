@@ -1,6 +1,8 @@
+import { WeatherByLocation } from "../types";
+
 async function fetchWeatherDataByLocationName(
   locationName: string,
-): Promise<void> {
+): Promise<WeatherByLocation> {
   const apiKey = "961dc6468f1545c7b6f41350230509";
   const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${locationName}`;
   try {
@@ -10,9 +12,9 @@ async function fetchWeatherDataByLocationName(
       throw new Error("Error while data fetching.");
     }
     const data = await response.json();
-    return data;
+    return data as WeatherByLocation;
   } catch (e) {
-    throw new Error("An error occured while fetchign the data.");
+    return Promise.reject(e)
   }
 }
 

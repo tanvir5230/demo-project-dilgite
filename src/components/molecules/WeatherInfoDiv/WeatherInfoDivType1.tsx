@@ -1,13 +1,12 @@
 import React from "react";
 import MyText from "../../atoms/Text/Text";
+import { WeatherTypes } from "../../../types";
 
 interface WeatherInfo {
-  weatherParameter: string;
-  value: string;
-  secondValue: string;
+  data: WeatherTypes
 }
 
-const WeatherInfoCard: React.FC<{ data: WeatherInfo }> = ({ data }) => {
+const WeatherInfoCard: React.FC<WeatherInfo> = ({data}) => {
   return (
     <div
       className="text-start pl-4 rounded-3xl flex flex-col justify-around py-3"
@@ -15,7 +14,7 @@ const WeatherInfoCard: React.FC<{ data: WeatherInfo }> = ({ data }) => {
     >
       <MyText text={data.weatherParameter} style={{ color: "#ddd" }} />
       <MyText
-        text={data.value}
+        text={data.value?.toString()}
         className="text-white font-bold"
         style={{ fontSize: "30px" }}
       />

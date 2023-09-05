@@ -1,13 +1,13 @@
 import React from "react";
 
 interface TextInterface {
-  text: string;
+  text?: string;
   style?: React.CSSProperties;
   className?: string;
 }
 
 const MyText: React.FC<TextInterface> = ({
-  text,
+  text = '',
   style = {},
   className = "",
 }) => {

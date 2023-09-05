@@ -9,7 +9,7 @@ interface ImageInterface {
 }
 
 const MyImage: React.FC<ImageInterface> = ({
-  src,
+  src ='',
   imageName = "",
   style = {},
   className = "",

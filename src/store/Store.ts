@@ -1,21 +1,22 @@
 import { create } from "zustand";
-import { fetchWeatherDataByLocationName } from "../api/fetchWeatherDataByLocation";
+import { Current, WeatherByLocation, Location } from "../types";
 
 interface SearchInterface {
   locationName: string;
-  locationData: object;
-  currentWeatherData: object;
+  locationData?: Location;
+  currentWeatherData?: Current;
   updateLocationName: (newLocationName: string) => void;
-  fetchWeatherInfoByLocationName: () => void;
+  fetchWeatherInfoByLocationName?: () => void;
+  setState:(params: WeatherByLocation) =>void
 }
 
-export const useWeatherDataStore = create<SearchInterface>((set, get) => ({
+export const useWeatherDataStore = create<SearchInterface>((set) => ({
   locationName: "Dhaka",
-  currentWeatherData: {},
-  locationData: {},
   updateLocationName: newLocationName => set({ locationName: newLocationName }),
-  fetchWeatherInfoByLocationName: async () => {
-    const data = await fetchWeatherDataByLocationName(get().locationName);
-    set({ locationData: data.location, currentWeatherData: data.current });
-  },
+  setState:(params)=> {
+    set({
+      locationData:params.location,
+      currentWeatherData: params.current
+    })
+  }
 }));

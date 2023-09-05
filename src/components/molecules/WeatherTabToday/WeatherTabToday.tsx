@@ -1,15 +1,16 @@
 import { useWeatherDataStore } from "../../../store/Store";
+import { WeatherTypes } from "../../../types";
 import { getDirectionFromStartLetter } from "../../../utils/getDirectionFromStartLetter";
 import WeatherInfoCard from "../WeatherInfoDiv/WeatherInfoDivType1";
 
 const WeatherTabToday = () => {
   const { currentWeatherData } = useWeatherDataStore();
 
-  const weatherData = [
+  const weatherData: WeatherTypes[]= [
     {
       weatherParameter: "Wind",
       value: currentWeatherData?.wind_kph + " Km/h",
-      secondValue: getDirectionFromStartLetter(currentWeatherData?.wind_dir),
+      secondValue: getDirectionFromStartLetter(currentWeatherData?.wind_dir?.toString() || ''),
     },
     {
       weatherParameter: "Humadity",
@@ -29,7 +30,7 @@ const WeatherTabToday = () => {
     {
       weatherParameter: "UV Index",
       value: currentWeatherData?.uv,
-      secondValue: currentWeatherData?.uv > 5 ? "High" : "Low",
+      secondValue: currentWeatherData?.uv || 0 > 5 ? "High" : "Low",
     },
     {
       weatherParameter: "Pressure",
@@ -55,7 +56,7 @@ const WeatherTabToday = () => {
   return (
     <div className="flex justify-center md:justify-start flex-wrap px-3 py-5 gap-5">
       {weatherData.map((item, i) => {
-        return <WeatherInfoCard data={item} key={i} />;
+        return <WeatherInfoCard key={i} data={item}/>;
       })}
     </div>
   );

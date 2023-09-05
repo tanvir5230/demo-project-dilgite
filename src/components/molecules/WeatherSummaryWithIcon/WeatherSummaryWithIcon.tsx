@@ -6,7 +6,7 @@ import MyText from "../../atoms/Text/Text";
 import { useWeatherDataStore } from "../../../store/Store";
 
 const WeatherSummaryWithIcon: React.FC = () => {
-  const { locationData, currentWeatherData } = useWeatherDataStore();
+  const {  currentWeatherData } = useWeatherDataStore();
   return (
     <div>
       <MyImage
@@ -18,7 +18,7 @@ const WeatherSummaryWithIcon: React.FC = () => {
       />
       <div className="flex justify-center items-start">
         <MyText
-          text={currentWeatherData?.temp_c}
+          text={currentWeatherData?.temp_c.toString()}
           className="font-semibold"
           style={{ fontSize: "50px" }}
         />
